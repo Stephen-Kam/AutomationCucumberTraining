@@ -16,7 +16,7 @@ public class InstanceCarryOver {
 	
 	 protected WebDriver closeDriver() {
 		  if (driver != null){ //instanciated driver for the first time
-		   driver.quit();
+		   driver.close();
 		  }
 		  return driver=null;
 	 }

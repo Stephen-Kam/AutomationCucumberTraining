@@ -34,5 +34,14 @@ public class Homepage {
 			aList = driver.findElements(By.xpath(navContainer));
 		}
 	}
+	
+	public void checkAllLinks(){
+		List<WebElement> aList = driver.findElements(By.tagName("a"));
+		for (int i = 0; i < aList.size(); i++){
+			aList.get(i).click();
+			driver.navigate().back();
+			aList = driver.findElements(By.tagName("a"));
+		}
+	}
 
 }

@@ -2,6 +2,7 @@ package com.java.cucumber.MercuryToursCucumber;
 
 import org.openqa.selenium.WebDriver;
 
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -20,10 +21,15 @@ public class MercuryTours extends InstanceCarryOver {
 	public void checkLinks() throws Throwable {
 	    homepage.checkLinks();
 	}
+	
+	@When("^I click on all links on the page, I will be taken to the relevant page$")
+	public void checkAllLinks() throws Throwable {
+		homepage.checkAllLinks();	    
+	}
 
-	@Then("^The driver will close$")
-	public void shutdown() throws Throwable {
-	    driver.close();
+	@After
+	public void shutdown() {
+	    closeDriver();
 	    
 	}
 
